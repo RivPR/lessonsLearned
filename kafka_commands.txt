@@ -1,0 +1,10 @@
+hosp_car_avail_edifact_1p_pf = 8 partitions (proxy to converter)
+hosp_car_avail_json_pf = 4 partitions (converter to filter)
+
+show topics that default config has been changed:
+$KAFKA_HOME/bin/kafka-topics.sh --describe --topics-with-overrides --zookeeper shlpfesdh107.tvlport.net:2181,shlpfesdh108.tvlport.net:2181,shlpfesdh109.tvlport.net:2181
+
+change retention time specific topic:
+$KAFKA_HOME/bin/kafka-topics.sh --zookeeper shlpfesdh107.tvlport.net:2181,shlpfesdh108.tvlport.net:2181,shlpfesdh109.tvlport.net:2181 --alter --topic hosp_car_avail_json_pf --config retention.ms=900000
+
+

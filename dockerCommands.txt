@@ -1,0 +1,14 @@
+Build the image:
+docker build $no_cache -t=”hda/corporatefilter” .
+Tag the image:
+                docker tag hda/corporatefilter docker-registry.tvlport.com/hda/corporatefilter
+Then push it:
+                docker push docker-registry.tvlport.com/hda/corporatefilter
+
+Go to putty and ssh to the bf vm and pull the image:
+                sudo docker pull docker-registry.tvlport.com/hda/corporatefilter
+
+Then it should create the image in the bf vm and you can test this with
+                sudo docker images
+Run the program with:
+                sudo docker run –rm -ti docker-registry.tvlport.com/hda/corporatefilter
