@@ -11,4 +11,4 @@ Go to putty and ssh to the bf vm and pull the image:
 Then it should create the image in the bf vm and you can test this with
                 sudo docker images
 Run the program with:
-                sudo docker run –rm -ti docker-registry.tvlport.com/hda/corporatefilter
+                sudo docker run –-rm -ti docker-registry.tvlport.com/hda/corporatefilter
