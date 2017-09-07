@@ -12,3 +12,5 @@ Then it should create the image in the bf vm and you can test this with
                 sudo docker images
 Run the program with:
                 sudo docker run –-rm -ti docker-registry.tvlport.com/hda/corporatefilter 
+Enter running container:
+		docker exec -i -t 665b4a1e17b6 /bin/bash
