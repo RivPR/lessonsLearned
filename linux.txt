@@ -1,1 +1,5 @@
-scp text.txt user@remote:
+from local to remote
+	scp file.txt user@remoteUrl:
+
+remote to local
+	scp user@remoteUrl:/path/to/file.txt /path/locally
