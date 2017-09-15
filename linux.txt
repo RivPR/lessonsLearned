@@ -3,3 +3,22 @@ from local to remote
 
 remote to local
 	scp user@remoteUrl:/path/to/file.txt /path/locally
+
+version of linux:
+	cat /etc/*-release
+
+reload bashprofile:
+	source .bash_profile
+
+install JDK remote server:
+	download tar file
+	scp tar to server to be installed
+	tar -zxf jdk-8u60-linux-x64.gz
+	mkdir and mv tar to /usr/java/
+	bash_profile:
+		export JAVA_HOME=/usr/java/default
+			(if root permission is granted, if not install to ~/usr/java/default)
+			{also, default only if you want to install multiple versions of Java}
+		alias java=$JAVA_HOME/bin/java
+	java -version
+	
