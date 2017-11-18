@@ -16,3 +16,5 @@ Enter running container:
 		docker exec -i -t 665b4a1e17b6 /bin/bash
 Restart all of docker:
 		sudo reboot -f
+To get files from container:
+		sudo docker cp d4e4ea1da2b9:/root/kafka-scripts/captured.txt . 
