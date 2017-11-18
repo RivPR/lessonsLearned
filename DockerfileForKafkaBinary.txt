@@ -1,0 +1,17 @@
+FROM path/to/jdk/that/sets/path/alpine_jdk8:1.0
+ 
+ADD . /usr/local/bin
+ 
+WORKDIR /usr/local/bin
+ 
+RUN tar -zxf kafka_2.10-0.9.0.1.tgz \
+ && rm kafka_2.10-0.9.0.1.tgz \
+ && find ./ -name "*.sh" -exec chmod +x {} \; \
+ && mv kafka-scripts ~
+ 
+ENV KAFKA_HOME /usr/local/bin/kafka_2.10-0.9.0.1
+ENV PATH $PATH:$KAFKA_HOME
+ 
+WORKDIR /root/kafka-scripts
+ 
+CMD ["bash"]
