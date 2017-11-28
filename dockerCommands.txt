@@ -1,20 +1,21 @@
+hda/corporate filter = path/to/where/you/want/the/image
 Build the image:
 		docker build $no_cache -t=”hda/corporatefilter” --build-arg appName=pf001 .
-Tag the image:
-                docker tag hda/corporatefilter docker-registry.tvlport.com/hda/corporatefilter
+Tag the image: (no need for this step if you used -t= in the step before
+                docker tag hda/corporatefilter local-docker-registry.com/hda/corporatefilter
 Then push it:
-                docker push docker-registry.tvlport.com/hda/corporatefilter
+                docker push local-docker-registry.com/hda/corporatefilter
 
 Go to putty and ssh to the bf vm and pull the image:
-                sudo docker pull docker-registry.tvlport.com/hda/corporatefilter
+                sudo docker pull local-docker-registry.com/hda/corporatefilter
 
-Then it should create the image in the bf vm and you can test this with
+Then it should create the image in the vm and you can test this with
                 sudo docker images
 Run the program with:
-                sudo docker run –-rm -ti docker-registry.tvlport.com/hda/corporatefilter 
+                sudo docker run –-rm -ti local-docker-registry.com/hda/corporatefilter 
 Enter running container:
 		docker exec -i -t 665b4a1e17b6 /bin/bash
 Restart all of docker:
 		sudo reboot -f
-To get files from container:
+To copy files from container: (/root/kafka-scripts/captured.txt = path/to/file/you/want)
 		sudo docker cp d4e4ea1da2b9:/root/kafka-scripts/captured.txt . 
