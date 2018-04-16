@@ -21,4 +21,6 @@ install JDK remote server:
 			{also, default only if you want to install multiple versions of Java}
 		alias java=$JAVA_HOME/bin/java
 	java -version
-	
+
+copy into clipboard:
+	pbcopy < <sourceToCopy>
